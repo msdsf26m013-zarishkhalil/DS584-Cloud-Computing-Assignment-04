@@ -12,7 +12,7 @@ PAYLOAD = {"P": 500000, "rate": 12, "n": 24}
 phases = [(10, 120), (100, 300), (10, 180)]
 os.makedirs("results", exist_ok=True)
 
-with open("results/hpa_load_test.csv", "w", newline="") as f:
+with open("results/hpa_load_test_retry.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["timestamp", "rate_req_sec", "duration_sec",
                      "total_requests", "successful", "errors"])
@@ -50,4 +50,4 @@ with open("results/hpa_load_test.csv", "w", newline="") as f:
         print(f"Completed: {success} successful | {errors} errors")
 
 print("\n10-minute staged load test completed.")
-print("Saved: results/hpa_load_test.csv")
+print("Saved: results/hpa_load_test_retry.csv")
